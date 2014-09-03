@@ -110,4 +110,6 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
-source "${ZDOTDIR}"/priv-aliases.sh
+if [[ -f "${ZDOTDIR}" ]]; then
+  source "${ZDOTDIR}"/priv-aliases.sh
+fi
