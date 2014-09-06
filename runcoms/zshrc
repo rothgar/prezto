@@ -12,6 +12,10 @@ fi
 
 # Customize to your needs...
 
+export EDITOR='vim'
+export VISUAL='vim'
+export CDPATH='.:~'
+
 #
 # Defines environment variables.
 #
@@ -59,6 +63,14 @@ alias h='history'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias lvim='vim -c "normal '\''0"'
 alias oops='sudo $(history -p \!\!)'
+alias mux='tmuxinator'
+
+# git aliases
+alias gamend='git commit --amend --no-edit'
+alias gg='git grep -in'
+alias gs='git st'
+alias ga='git add'
+alias gb='git branch'
 
 # setup worktunnel in .ssh/config
 alias sshwt='ssh -A -t worktunnel ssh -A -t'
@@ -107,5 +119,8 @@ function md() {
 }
 
 if [[ -f "${ZDOTDIR}" ]]; then
-  source "${ZDOTDIR}"/priv-aliases.sh
+    source "${ZDOTDIR}"/priv-aliases.sh
 fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

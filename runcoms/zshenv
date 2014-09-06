@@ -13,5 +13,5 @@ fi
 export ZDOTDIR=$HOME/.dotfiles/src
 export EDITOR=vim
 export VISUAL=vim
-export CDPATH=".:~"
+export CDPATH=".:${HOME}"
 # export SHELL="/bin/zsh"
