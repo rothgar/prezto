@@ -58,6 +58,7 @@ alias mount='mount | column -t'
 alias h='history'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias lvim='vim -c "normal '\''0"'
+alias oops='sudo $(history -p \!\!)'
 
 # setup worktunnel in .ssh/config
 alias sshwt='ssh -A -t worktunnel ssh -A -t'
