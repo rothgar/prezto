@@ -123,4 +123,4 @@ if [[ -f "${ZDOTDIR}" ]]; then
 fi
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+command -v rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
