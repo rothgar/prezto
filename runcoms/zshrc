@@ -16,19 +16,13 @@ export EDITOR='vim'
 export VISUAL='vim'
 export CDPATH='.:~'
 
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Directory listing
 
 #alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 alias latr='ls -lAtr'
+alias lla='ll -A'
 
 # Easier navigation: .., ..., -
 alias ..='cd ..'
@@ -118,7 +112,7 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
-if [[ -f "${ZDOTDIR}" ]]; then
+if [[ -f "${ZDOTDIR}"/priv-aliases.sh ]]; then
     source "${ZDOTDIR}"/priv-aliases.sh
 fi
 
