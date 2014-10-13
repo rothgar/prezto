@@ -58,6 +58,7 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias lvim='vim -c "normal '\''0"'
 alias oops='sudo $(history -p \!\!)'
 alias mux='tmuxinator'
+alias sudo='sudo ' # allow aliases to work with sudo
 
 # git aliases
 alias gamend='git commit --amend --no-edit'
