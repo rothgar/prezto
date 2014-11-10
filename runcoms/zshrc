@@ -43,6 +43,7 @@ if [[ -x /usr/sbin/apt-get ]]; then
     alias apt-search="apt-cache search"
 elif [[ -x /usr/bin/yum ]]; then
     alias rpg="rpm -qa | grep"
+    alias yum="sudo yum"
     alias yum-update="sudo yum update"
     alias yum-install="sudo yum install"
     alias yum-remove="sudo yum remove"
