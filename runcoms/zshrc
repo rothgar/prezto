@@ -63,7 +63,7 @@ alias h='history'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias lvim='vim -c "normal '\''0"'
 alias mux='tmuxinator'
-# alias sudo='sudo ' # need to figure out how to make this work
+alias sudo='sudo -s '
 alias v='vim'
 
 # docker
