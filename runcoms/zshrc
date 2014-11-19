@@ -124,6 +124,8 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
+function show-cert() { sudo openssl x509 -text -in "$1"; }
+
 # Set precmd for tmux
 case "$TERM" in
     screen*)
