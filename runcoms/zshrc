@@ -138,8 +138,13 @@ esac
 # Backup funciton
 bu() { cp "$1" "$1".backup-`date +%y%m%d`; }
 
-if [[ -f "${ZDOTDIR}"/priv-aliases.sh ]]; then
-    source "${ZDOTDIR}"/priv-aliases.sh
+# exported for per-directory-history
+export HISTORY_BASE="${ZDOTDIR}"/.dir_history
+
+if [[ -d "${ZDOTDIR}"/zsh.d ]]; then
+    for ZSH_FILE in $(ls -A "${ZDOTDIR}"/zsh.d/*.zsh); do
+        source "${ZSH_FILE}"
+    done
 fi
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
