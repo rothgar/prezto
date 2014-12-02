@@ -37,6 +37,7 @@ alias du='du -ch'
 
 # Package management
 if [[ -x /usr/sbin/apt-get ]]; then
+    alias apt-get="sudo apt-get"
     alias apt-update="sudo apt-get -qq update && sudo apt-get upgrade"
     alias apt-install="sudo apt-get install"
     alias apt-remove="sudo apt-get remove"
@@ -78,6 +79,7 @@ alias gs='git st'
 alias ga='git add'
 alias gb='git branch'
 
+# SSH aliases
 # setup worktunnel in .ssh/config
 alias sshwt='ssh -A -t worktunnel ssh -A -t'
 # setup hometunnel is .ssh/config
