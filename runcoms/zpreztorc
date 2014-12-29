@@ -32,6 +32,7 @@ zstyle ':prezto:load' pmodule \
   'rsync' \
   'wakeonlan' \
   'yum' \
+  'dpkg' \
   'spectrum' \
   'utility' \
   'ssh' \
