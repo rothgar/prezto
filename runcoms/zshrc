@@ -141,6 +141,9 @@ function md() {
 
 function show-cert() { sudo openssl x509 -text -in "$1"; }
 
+# SSH to a host when it becomes available
+function sshup() { while $(ping -c 1 ${1} | grep -qi unreachable); do printf %s "."; sleep 1; done && ssh "$1"; }
+
 # Set precmd for tmux
 case "$TERM" in
     screen*)
