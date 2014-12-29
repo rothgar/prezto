@@ -39,22 +39,7 @@ alias xxx='exit'
 alias fs="stat -f '%z bytes'"
 alias df="df -h"
 alias du='du -ch'
-
-# Package management
-if [[ -x /usr/sbin/apt-get ]]; then
-    alias apt-get="sudo apt-get"
-    alias apt-update="sudo apt-get -qq update && sudo apt-get upgrade"
-    alias apt-install="sudo apt-get install"
-    alias apt-remove="sudo apt-get remove"
-    alias apt-search="apt-cache search"
-elif [[ -x /usr/bin/yum ]]; then
-    alias rpg="rpm -qa | grep"
-    alias yum="sudo yum"
-    alias yum-update="sudo yum update"
-    alias yum-install="sudo yum install"
-    alias yum-remove="sudo yum remove"
-    alias yum-search="sudo yum search"
-fi
+alias rpg="rpm -qa | grep"
 
 if (( $+commands[subscription-manager] )) ; then
     alias sm="sudo subscription-manager"
