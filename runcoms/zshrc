@@ -18,6 +18,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 export CDPATH='.:~'
 export GOPATH=$HOME
+# exported for per-directory-history
+export HISTORY_BASE="${ZDOTDIR}"/.dir_history
+export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 
 #------------ALIASES------------------
 
@@ -69,6 +72,10 @@ alias gs='git st'
 alias ga='git add'
 alias gb='git branch'
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 # SSH aliases
 # setup worktunnel in .ssh/config
 alias sshwt='ssh -A -t worktunnel ssh -A -t'
@@ -89,9 +96,6 @@ fi
 
 #------------FUNCTIONS----------------
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 # apt-history
 function apt-history(){
       case "$1" in
@@ -141,14 +145,10 @@ esac
 # Backup funciton
 bu() { cp "$1" "$1".backup-`date +%y%m%d`; }
 
-# exported for per-directory-history
-export HISTORY_BASE="${ZDOTDIR}"/.dir_history
-
 if [[ -d "${ZDOTDIR}"/zsh.d ]]; then
     for ZSH_FILE in $(ls -A "${ZDOTDIR}"/zsh.d/*.zsh); do
         source "${ZSH_FILE}"
     done
 fi
 
-export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 command -v rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
