@@ -10,8 +10,4 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export ZDOTDIR=$HOME/.dotfiles/src
-export EDITOR=vim
-export VISUAL=vim
-export CDPATH=".:${HOME}"
-# export SHELL="/bin/zsh"
+ZDOTDIR=$HOME/.dotfiles/src/

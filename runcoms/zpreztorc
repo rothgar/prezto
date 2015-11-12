@@ -19,30 +19,33 @@ zstyle ':prezto:*:*' color 'yes'
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
+# environment first, prompt last
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
+  'archive' \
+  'completion' \
   'directory' \
+  'dpkg' \
+  'editor' \
+  'fasd' \
+  'git' \
+  'gpg' \
+  'history' \
+  'history-substring-search' \
   'rsync' \
+  'spectrum' \
+  'ssh' \
+  'syntax-highlighting' \
+  'terminal' \
+  'tmux' \
+  'utility' \
   'wakeonlan' \
   'yum' \
-  'dpkg' \
-  'spectrum' \
-  'utility' \
-  'ssh' \
-  'gpg' \
-  'git' \
-  'tmux' \
-  'syntax-highlighting' \
-  'history-substring-search' \
-  'completion' \
-  'prompt'
+  'prompt' 
 
 #
 # Editor
@@ -52,7 +55,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
-zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'no'
 
 #
 # Git
